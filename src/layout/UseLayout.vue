@@ -1,19 +1,32 @@
 <template>
-  <router-view></router-view>
+  <div style="height: 100%;">
+    <IframeLoader
+      :iframes="iframes"
+      :current="current"
+    ></IframeLoader>
+    <router-view></router-view>
+  </div>
 </template>
 <script>
 import { defineComponent, ref } from '@vue/composition-api'
-import { Card } from 'element-ui'
+import IframeLoader from '@/components/moduleloads/iframe-loader'
 export default defineComponent({
   name: 'bbbB',
   components: {
-    Card
+    IframeLoader
   },
   setup() {
-    console.log('----------------');
-    const a = ref(2222)
+    //缓存iframe页面
+    const iframes = ref([])
+    //缓存 Vue route页面
+    const vueRoutes = ref([])
+    // 当前显示的iframe
+    const current = ref({ key: null })
+
     return {
-      a
+      iframes,
+      vueRoutes,
+      current
     }
   },
 })

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    404
+  <div style="display: none">
+
   </div>
 </template>
 <script>

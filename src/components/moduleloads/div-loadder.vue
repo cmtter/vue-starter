@@ -1,6 +1,6 @@
 <template>
   <div>
-    404
+    div-loadder
   </div>
 </template>
 <script>
